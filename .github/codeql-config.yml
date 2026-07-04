@@ -1,0 +1,15 @@
+name: "acqnav CodeQL config"
+
+# acqnav performs no logging and handles no secrets or credentials; it operates
+# purely on unclassified acquisition profile data. The clear-text-logging query
+# occasionally false-positives on plain print()/report output in the CLI and
+# demo scripts, which emit only user-supplied, non-sensitive assessment data.
+query-filters:
+  - exclude:
+      id: py/clear-text-logging-sensitive-data
+  - exclude:
+      id: py/clear-text-storage-sensitive-data
+
+paths-ignore:
+  - demos
+  - tests

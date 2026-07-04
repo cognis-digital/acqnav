@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acqnav"
+version = "1.0.0"
+description = "Defense Acquisition Navigator — open, self-hostable acquisition and program-management navigation (pathways, transition scoring, readiness, funding, gates)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "COCL-1.0" }
+authors = [{ name = "Cognis Digital LLC" }]
+keywords = [
+    "defense", "acquisition", "program-management", "dod",
+    "trl", "mrl", "jcids", "sbir", "sttr", "otA", "transition",
+    "adaptive-acquisition-framework",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+acqnav = "acqnav.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/cognis-digital/acqnav"
+Repository = "https://github.com/cognis-digital/acqnav"
+Issues = "https://github.com/cognis-digital/acqnav/issues"
+
+[tool.setuptools]
+packages = ["acqnav"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

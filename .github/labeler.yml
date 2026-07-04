@@ -1,0 +1,22 @@
+# Config for actions/labeler@v5
+module:
+  - changed-files:
+      - any-glob-to-any-file: "acqnav/**"
+
+tests:
+  - changed-files:
+      - any-glob-to-any-file: "tests/**"
+
+demos:
+  - changed-files:
+      - any-glob-to-any-file: "demos/**"
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**"
+          - "README.md"
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
