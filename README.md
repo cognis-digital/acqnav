@@ -19,13 +19,71 @@ Getting a technology from a good prototype to a funded, fielded Program of Recor
 
 ## Install
 
+**Prerequisites:** Python 3.10+ (and `git`). `acqnav` is pure standard library — no third-party runtime dependencies, no network calls. The installers create an isolated `.venv`, install `acqnav` as a real `acqnav` command, and verify it runs. They are idempotent (safe to re-run).
+
+<details open>
+<summary><strong>Windows (PowerShell)</strong></summary>
+
+```powershell
+git clone https://github.com/cognis-digital/acqnav
+cd acqnav
+powershell -ExecutionPolicy Bypass -File .\install.ps1
+# then, in a new/activated shell:
+.\.venv\Scripts\Activate.ps1
+acqnav --help
+```
+</details>
+
+<details>
+<summary><strong>macOS</strong></summary>
+
+```bash
+git clone https://github.com/cognis-digital/acqnav
+cd acqnav
+./install.sh
+# then:
+source .venv/bin/activate
+acqnav --help
+```
+</details>
+
+<details>
+<summary><strong>Linux</strong></summary>
+
+```bash
+git clone https://github.com/cognis-digital/acqnav
+cd acqnav
+./install.sh
+# then:
+source .venv/bin/activate
+acqnav --help
+```
+</details>
+
+<details>
+<summary><strong>Docker</strong></summary>
+
+```bash
+git clone https://github.com/cognis-digital/acqnav
+cd acqnav
+docker build -t acqnav .
+docker run --rm acqnav --help
+docker run --rm acqnav transition --trl 6 --sponsor-identified --funding-line-identified
+```
+</details>
+
+<details>
+<summary><strong>Manual / pip (any OS)</strong></summary>
+
 ```bash
 git clone https://github.com/cognis-digital/acqnav
 cd acqnav
 python -m pip install -e ".[dev]"
+acqnav --version
 ```
+</details>
 
-Requires Python 3.10+.
+Prefer `make`? `make install`, `make test`, `make demo`, `make lint`, and `make clean` all work cross-platform (they shell out via `python -m`).
 
 ## Quick start (CLI)
 
